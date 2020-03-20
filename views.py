@@ -28,7 +28,7 @@ def img():
 @app.route('/add')
 def add():
     # 增加
-    stock_detail = database.StockDetail(stock_number='1234')
+    stock_detail = database.BabyStatistics(stock_number='1234')
     db.session.add(stock_detail)
     # 事务
     db.session.commit()
@@ -48,7 +48,7 @@ def delete():
 @app.route('/query/<int:baby_id>')
 def query(baby_id):
     # 增加
-    r = database.StockDetail.query.all()
+    r = database.BabyStatistics.query.all()
     query_result = to_dict(r)
 
     return json.dumps(query_result), 200, HEADER
