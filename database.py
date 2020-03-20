@@ -9,6 +9,8 @@ class BabyStatistics(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     # 宝宝名字
     baby_name = db.Column(db.String(500))
+    # 宝宝id
+    baby_id = db.Column(db.Integer)
     # 行为
     action = db.Column(db.String(500))
     # 喂奶量
@@ -20,8 +22,10 @@ class BabyInfo(db.Model):
     __tablename__ = 'baby_info'
     # 宝宝id
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    baby_name = db.Column(db.String)
+    baby_name = db.Column(db.String(500))
 
 class BabyAction(db.Model):
     __tablename__ = 'baby_action'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    action_name = db.Column(db.String(500))
+
